@@ -1,0 +1,32 @@
+#calculator-container {
+	width: 100%;
+	background: $primary-color;
+	overflow: hidden;
+	button {
+		width: 25%;
+		background: none;
+		border: none;
+		border-right: 1px solid $secondary-color;
+		border-bottom: 1px solid $secondary-color;
+		margin: 0;
+		padding: 25px;
+		font-family: $primary-font;
+		font-weight: 300;
+		float: left;
+		font-size: 30px;
+		color: #fff;
+		cursor: pointer;
+		transition: all 0.5s ease;
+		&:hover {
+			background: $secondary-color;
+		}
+	}
+}
+
+@media screen and (max-width:767px){
+	#calculator-container {
+		button {
+			width: 33.3%;
+		}
+	}
+}

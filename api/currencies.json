@@ -1,0 +1,34 @@
+[
+  {
+    "from_label": "AUD",
+    "to_label": "USD",
+    "from_icon": "dist/imgs/au.png",
+    "to_icon": "dist/imgs/us.png",
+    "menu_label": "AUD > USD",
+    "ratio": "0.78"
+  },
+  {
+    "from_label": "USD",
+    "to_label": "AUD",
+    "from_icon": "dist/imgs/us.png",
+    "to_icon": "dist/imgs/au.png",
+    "menu_label": "USD > AUD",
+    "ratio": "1.29"
+  },
+  {
+    "from_label": "AUD",
+    "to_label": "GBP",
+    "from_icon": "dist/imgs/au.png",
+    "to_icon": "dist/imgs/uk.png",
+    "menu_label": "AUD > GBP",
+    "ratio": "0.5"
+  },
+  {
+    "from_label": "GBP",
+    "to_label": "AUD",
+    "from_icon": "dist/imgs/uk.png",
+    "to_icon": "dist/imgs/au.png",
+    "menu_label": "GBP > AUD",
+    "ratio": "1.99"
+  }
+]

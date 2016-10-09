@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="/dist/imgs/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/dist/imgs/favicon.ico" type="image/x-icon">
+		<title>Currency Converter</title>
+		<!-- Load Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400" rel="stylesheet">
+		<!-- Load CSS -->
+		<link rel="stylesheet" type="text/css" href="dist/css/app.min.css" />
+	</head>
+	
+	
+	<body ng-app="ConverterApp" ng-controller="CalculatorController">
+		
+		<!-- Off Canvas Menu -->
+		<section id="menu" ng-class="menuCheck">
+		    
+			<nav class="menuContent">
+			    <span>Settings</span>
+			    <div ng-repeat="currency in currencyInfo">
+				    <!-- First Menu -->
+				    <button class="currency-format" ng-click="setCurrency(currency)" ng-bind="currency.menu_label"></button>
+			    </div>
+			</nav> 
+		
+		</section>
+		<!-- End Off Canvas Menu -->
+		
+		
+		<div class="page-wrap" ng-class="menuCheck">
+			<header>
+				
+				<button class="hamburger hamburger--elastic" ng-class="menuCheck" type="button" ng-click="changeClass()">
+				  <span class="hamburger-box">
+				    <span class="hamburger-inner"></span>
+				  </span>
+				</button>  
+				
+				<h1>CONVERTER</h1>
+				
+				<nav id="currency-format-container">
+					<button class="currency-format" ng-repeat="currency in currencyInfo" ng-click="setCurrency(currency)" ng-bind="currency.menu_label"></button>
+				</nav>
+			</header>
+		
+			<section id="result-container" ng-class="numberLength">
+				<div id="convert-from" class="convert">
+					<div class="flag">
+						<img ng-src="{{from_icon}}" ng-alt="{{from_label}}" />
+					</div>
+					<div class="suffix">
+						<p ng-bind="from_label"></p>
+					</div>
+					<div class="amount ">
+						<p ng-bind="count"></p>
+					</div> 	
+				</div>
+				<div id="convert-to" class="convert">
+					<div class="flag">
+						<img ng-src="{{to_icon}}" ng-alt="{{to_label}}" />
+					</div>
+					<div class="suffix">
+						<p ng-bind="to_label"></p>
+					</div>
+					<div class="amount">
+						<p ng-bind='converted_total | currency:""'></p>
+					</div>
+				</div>
+			</section>
+			<section id="calculator-container">
+	            <div ng-repeat="number in numberRange">
+	            	<button name="btn{{number}}" class="numberbutton" value="{{number}}" ng-click='updateOutput(number)' ng-bind="number"></button>
+	            </div>
+	        </section>
+		</div>
+		<!-- Main App File -->
+		<script src="dist/js/main.min.js"></script>
+	</body>
+</html>
